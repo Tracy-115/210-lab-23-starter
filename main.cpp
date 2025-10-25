@@ -40,7 +40,7 @@ void add_goat(list<Goat> &trip, string names[], string colors[]){
     trip.push_back(g);
 
     cout << "New goat: ";
-    g.display_trip();
+    g.display();
 }
 void display_trip(list<Goat> trip){ //the choices are going to be displayed in the format [number] information
     if (trip.empty()){
@@ -50,7 +50,7 @@ void display_trip(list<Goat> trip){ //the choices are going to be displayed in t
     int a = 1;
     for (Goat g:trip){
         cout << "[ " << a << " ] " ;
-        g.display_trip();
+        g.display();
         a++;
     }
 }
@@ -73,7 +73,7 @@ void delete_goat(list<Goat> &trip){//this si for the delete choice
     for (auto it = trip.begin(); it != trip.end(); ++it, ++a){ //in this loop it points from the start and goes until the end to find the index that the user wishes to delete
         if (a ==num){
             cout << "Delete";
-            it->display_trip();
+            it->display();
             trip.erase(it);
             cout << "Chosen goat is deleted" << endl;
             return;

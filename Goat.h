@@ -25,6 +25,9 @@ public:
     string get_color() const        { return color; }
 
     // write overloaded < operator for the std::list
+    void display(){
+        cout << name << "( " << age << ", " << color << " )" << endl;
+    }
 };
 
 #endif
