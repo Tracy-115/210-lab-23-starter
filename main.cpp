@@ -72,10 +72,10 @@ void delete_goat(list<Goat> &trip){//this si for the delete choice
     int a = 0;
     for (auto it = trip.begin(); it != trip.end(); ++it, ++a){ //in this loop it points from the start and goes until the end to find the index that the user wishes to delete
         if (a ==num){
-            cout << "Delete";
+            cout << "Delete: ";
             it->display();
             trip.erase(it);
-            cout << "Chosen goat is deleted" << endl;
+            cout << "Your chosen goat is now deleted." << endl;
             return;
         }
     }
