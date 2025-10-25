@@ -32,15 +32,15 @@ int main_menu(){
 }
 void add_goat(list<Goat> &trip, string names[], string colors[]){
     //randomly select a name and color from main()'s arrays and select a random age between 0 and MAX_AG
-    int name = rand()% SZ_NAMES; //these are the positions or the index
-    int color = rand()% SZ_COLORS;
+    int nameI = rand()% SZ_NAMES; //these are the positions or the index
+    int colorI = rand()% SZ_COLORS;
     int age = rand()% (MAX_AGE+1);
 
-    Goat g(names[name], age, colors[color]); //this takes back to the constructor int goat.h
+    Goat g(names[nameI], age, colors[colorI]); //this takes back to the constructor int goat.h
     trip.push_back(g);
 
     cout << "New goat: ";
-    g.print();
+    g.display();
 }
 void display_trip(list<Goat> trip){ //the choices are going to be displayed in the format [number] information
     if (trip.empty()){
@@ -50,7 +50,7 @@ void display_trip(list<Goat> trip){ //the choices are going to be displayed in t
     int a = 1;
     for (Goat g:trip){
         cout << "[ " << a << " ] " ;
-        g.print();
+        g.display();
         a++;
     }
 }
@@ -59,7 +59,7 @@ int select_goat(list<Goat> trip){
     cout << "Choice --> "; //the user will have to make a choice 
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > = trip.size()){
+    while (choice < 1 || choice >= trip.size()){
         cout << "Re-enter your choice: ";
         cin >> choice;
     }
@@ -73,7 +73,7 @@ void delete_goat(list<Goat> &trip){//this si for the delete choice
     for (auto it = trip.begin(); it != trip.end(); ++it, ++a){ //in this loop it points from the start and goes until the end to find the index that the user wishes to delete
         if (a ==num){
             cout << "Delete";
-            it->print();
+            it->display();
             trip.erase(it);
             cout << "Chosen goat is deleted" << endl;
             return;
@@ -102,25 +102,25 @@ int main() {
         int num = main_menu();
         cout << endl;
         switch(num){
-            case 1{
+            case 1:
                 add_goat(trip, names, colors);
                 cout << endl;
                 break;
-            }
-            case 2{
+            
+            case 2:
                 delete_goat(trip);
                 cout << endl;
                 break;
-            }
-            case 3{
+            
+            case 3:
                 display_trip(trip);
                 cout << endl;
                 break;
-            }
-            case 4{
+            
+            case 4:
                 again = false;
                 break;
-            }
+            
     }
 }
 
