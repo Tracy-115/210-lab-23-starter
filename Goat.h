@@ -29,7 +29,8 @@ public:
         cout << name << "( " << age << ", " << color << " )" << endl;
     }
      bool operator< (const Goat &other) const {
-        return name < other.name;
+        if (name != other.name)
+            return name < other.name;
         return age < other.age;
     }
 

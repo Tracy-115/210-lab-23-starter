@@ -64,13 +64,17 @@ int select_goat(list<Goat> trip){
     cout << "Which spot would you like to delete --> "; //the user will have to make a choice 
     int choice;
     cin >> choice;
-    while (choice < 1 || choice >= trip.size()){
+    while (choice < 1 || choice > trip.size()){
         cout << "Re-enter your choice: ";
         cin >> choice;
     }
     return choice -1;
 }
 void delete_goat(list<Goat> &trip){//this si for the delete choice 
+    if (trip.empty()){
+        cout << "The list is empty." << endl;
+        return;
+    }
     int num = select_goat(trip);
     if (num == - 1) return;
 
