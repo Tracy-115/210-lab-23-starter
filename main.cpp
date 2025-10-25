@@ -82,22 +82,41 @@ void delete_goat(list<Goat> &trip){//this si for the delete choice
 
 int main() {
     srand(time(0));
-    bool again;
-
+    bool again =true;
+    list<Goat> trip;
     // read & populate arrays for names and colors
     ifstream fin("names.txt");
     string names[SZ_NAMES];
     int i = 0;
     while (fin >> names[i++]);
     fin.close();
+
     ifstream fin1("colors.txt");
     string colors[SZ_COLORS];
     i = 0;
     while (fin1 >> colors[i++]);
     fin1.close();
 
+    while(again) {
+        int num = main_menu();
+        cout << endl;
 
-
+        if (num = 1){
+            add_goat(trip, names, colors);
+            cout << endl;
+        }
+        if (num = 2){
+            delete_goat(trip);
+            cout << endl;
+        }
+        if (num = 3){
+            display_trip(trip);
+            cout << endl;
+        }
+        if (num = 4){
+            again = false;
+        }
+    }
 
     return 0;
 }
