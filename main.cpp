@@ -44,7 +44,7 @@ void add_goat(list<Goat> &trip, string names[], string colors[]){
 }
 void display_trip(list<Goat> trip){ //the choices are going to be displayed in the format [number] information
     if (trip.empty()){
-        cout << "It is empty, there is no trip";
+        cout << "It is empty" << endl;
     }
     
     int a = 1;
