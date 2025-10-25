@@ -64,6 +64,21 @@ int select_goat(list<Goat> trip){
     }
     return choice -1;
 }
+void delete_goat(list<Goat> &trip){//this si for the delete choice 
+    int num = select_goat(trip);
+    if (num == - 1) return;
+
+    int a = 0;
+    for (auto it = trip.begin(); it != trip.endl(); ++it, ++a){ //in this loop it points from the start and goes until the end to find the index that the user wishes to delete
+        if (a ==num){
+            cout << "Delete";
+            it->print();
+            trip.erase(it);
+            cout << "Chosen goat is deleted" << endl;
+            return;
+        }
+    }
+}
 
 int main() {
     srand(time(0));
