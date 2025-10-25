@@ -30,6 +30,18 @@ int main_menu(){
     }
     return num;
 }
+void add_goat(list<Goat> &trip, string name[], string color[]){
+    //randomly select a name and color from main()'s arrays and select a random age between 0 and MAX_AG
+    int name = rand()% SZ_NAMES; //these are the positions or the index
+    int color = rand()% SZ_COLORS;
+    int age = rand()% (MAX_AGE+1);
+
+    Goat g(name[name], age, color[color]); //this takes back to the constructor int goat.h
+    trip.push_back(g);
+
+    cout << "New goat: ";
+    g.print();
+}
 
 int main() {
     srand(time(0));
