@@ -24,7 +24,7 @@ int main_menu(){
     cout <<  "Choice --> ";
     cin >> num;
 
-    while (num <1 || num>4 ){
+    while (num < 1 || num > 4 ){
         cout << "Invalid number choice, please re-enter: ";
         cin >> num;
     }
@@ -49,16 +49,17 @@ void display_trip(list<Goat> trip){ //the choices are going to be displayed in t
     
     int a = 1;
     for (Goat g:trip){
-        cout << "[" << a << "]" ;
+        cout << "[ " << a << " ] " ;
         g.print();
         a++;
     }
 }
 int select_goat(list<Goat> trip){
+    display_trip(trip);
     cout << "Choice --> "; //the user will have to make a choice 
     int choice;
     cin >> choice;
-    while (choice <1 || choice >=a){
+    while (choice < 1 || choice > = trip.size()){
         cout << "Re-enter your choice: ";
         cin >> choice;
     }
@@ -69,7 +70,7 @@ void delete_goat(list<Goat> &trip){//this si for the delete choice
     if (num == - 1) return;
 
     int a = 0;
-    for (auto it = trip.begin(); it != trip.endl(); ++it, ++a){ //in this loop it points from the start and goes until the end to find the index that the user wishes to delete
+    for (auto it = trip.begin(); it != trip.end(); ++it, ++a){ //in this loop it points from the start and goes until the end to find the index that the user wishes to delete
         if (a ==num){
             cout << "Delete";
             it->print();
