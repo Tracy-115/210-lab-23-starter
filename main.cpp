@@ -1,7 +1,11 @@
+// Kyawt Thinzar Min | Lab 23
+//IDE: VS code
 #include <iostream>
 #include <fstream>
 #include <iomanip>
 #include <list>
+#include <cstdlib>
+#include <ctime>
 #include "Goat.h"
 using namespace std;
 
@@ -45,6 +49,7 @@ void add_goat(list<Goat> &trip, string names[], string colors[]){
 void display_trip(list<Goat> trip){ //the choices are going to be displayed in the format [number] information
     if (trip.empty()){
         cout << "It is empty" << endl;
+        return;
     }
     
     int a = 1;

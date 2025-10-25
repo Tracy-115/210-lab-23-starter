@@ -28,6 +28,11 @@ public:
     void display(){
         cout << name << "( " << age << ", " << color << " )" << endl;
     }
+     bool operator< (const Goat &other) const {
+        return name < other.name;
+        return age < other.age;
+    }
+
 };
 
 #endif
