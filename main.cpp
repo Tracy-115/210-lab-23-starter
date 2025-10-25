@@ -30,17 +30,39 @@ int main_menu(){
     }
     return num;
 }
-void add_goat(list<Goat> &trip, string name[], string color[]){
+void add_goat(list<Goat> &trip, string names[], string colors[]){
     //randomly select a name and color from main()'s arrays and select a random age between 0 and MAX_AG
     int name = rand()% SZ_NAMES; //these are the positions or the index
     int color = rand()% SZ_COLORS;
     int age = rand()% (MAX_AGE+1);
 
-    Goat g(name[name], age, color[color]); //this takes back to the constructor int goat.h
+    Goat g(names[name], age, colors[color]); //this takes back to the constructor int goat.h
     trip.push_back(g);
 
     cout << "New goat: ";
     g.print();
+}
+void display_trip(list<Goat> trip){ //the choices are going to be displayed in the format [number] information
+    if (trip.empty()){
+        cout << "It is empty, there is no trip";
+    }
+    
+    int a = 1;
+    for (Goat g:trip){
+        cout << "[" << a << "]" ;
+        g.print();
+        a++;
+    }
+}
+int select_goat(list<Goat> trip){
+    cout << "Choice --> "; //the user will have to make a choice 
+    int choice;
+    cin >> choice;
+    while (choice <1 || choice >=a){
+        cout << "Re-enter your choice: ";
+        cin >> choice;
+    }
+    return choice -1;
 }
 
 int main() {
