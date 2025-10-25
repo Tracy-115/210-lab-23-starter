@@ -100,23 +100,28 @@ int main() {
     while(again) {
         int num = main_menu();
         cout << endl;
-
-        if (num = 1){
-            add_goat(trip, names, colors);
-            cout << endl;
-        }
-        if (num = 2){
-            delete_goat(trip);
-            cout << endl;
-        }
-        if (num = 3){
-            display_trip(trip);
-            cout << endl;
-        }
-        if (num = 4){
-            again = false;
-        }
+        switch(num){
+            case 1{
+                add_goat(trip, names, colors);
+                cout << endl;
+                break;
+            }
+            case 2{
+                delete_goat(trip);
+                cout << endl;
+                break;
+            }
+            case 3{
+                display_trip(trip);
+                cout << endl;
+                break;
+            }
+            case 4{
+                again = false;
+                break;
+            }
     }
+}
 
     return 0;
 }
