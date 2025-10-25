@@ -56,7 +56,7 @@ void display_trip(list<Goat> trip){ //the choices are going to be displayed in t
 }
 int select_goat(list<Goat> trip){
     display_trip(trip);
-    cout << "Choice --> "; //the user will have to make a choice 
+    cout << "Which spot would you like to delete --> "; //the user will have to make a choice 
     int choice;
     cin >> choice;
     while (choice < 1 || choice >= trip.size()){
